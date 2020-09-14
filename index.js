@@ -111,9 +111,9 @@ function finalScore(callback, innings){
   return {"Home": homeScore,
     "Away": awayScore}
   
-  }
-  
-  console.log(finalScore(inning, 9));
+}
+
+//console.log(finalScore(inning, 9));
 
 
 
@@ -141,8 +141,38 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+
+// function getInningScore(cb1, innings) {
+
+//   let homeScore = 0;
+//   let awayScore = 0;
+  
+//   for(let i = 0; i < innings; i++) {
+//     homeScore = cb1();
+//     awayScore = cb1();
+//   }
+  
+//   return {"Home": homeScore,
+//     "Away": awayScore}
+
+// }
+
+//console.log(getInningScore(inning, 9));
+
+let getInningScore = '';
+
+function scoreboard(cb1, cb2, innings) {
+
+  let awayTeam = 0
+  let homeTeam = 0
+
+  for (let i = 0; i < innings; i++) {
+    cb1 = `${i + 1} inning: Away Team ${awayTeam} - Home Team ${homeTeam}`;
+    console.log(cb1)
+    awayTeam = awayTeam + cb2();
+    homeTeam = homeTeam + cb2();
+  }
+
 }
 
-
+scoreboard(getInningScore, inning, 9)
