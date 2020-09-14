@@ -21,6 +21,9 @@ function processFirstItem(stringList, callback) {
 // ⭐️ Example Challenge END ⭐️
 
 
+
+
+
 ///// M V P ///////
 
 /* Task 1: `counterMaker`
@@ -72,11 +75,12 @@ function inning(){
 
     let randomScore = (Math.floor(Math.random() * 3));
 
-    return randomScore
+    return randomScore;
 
 }
 
-console.log(inning());
+//console.log(inning());
+
 
 
 
@@ -94,11 +98,26 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(callback, innings){
 
-  /*Code Here*/
+  let homeScore = 0;
+  let awayScore = 0;
+  
+  for(let i = 0; i < innings; i++) {
+    homeScore += callback();
+    awayScore += callback();
+  }
+  
+  return {"Home": homeScore,
+    "Away": awayScore}
+  
+  }
+  
+  console.log(finalScore(inning, 9));
 
-}
+
+
+
 
 /* Task 4: 
 
