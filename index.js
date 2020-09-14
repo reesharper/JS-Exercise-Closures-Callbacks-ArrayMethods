@@ -28,19 +28,18 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
- *  Counter1 uses a closure allowing you to store the data of each return unlike counter 2 which just generates the new score without knowing the previous data
+ *  Counter1 uses lexical scope by having the count variable inside the function. Counter2 is accessing the count variable from the global scope and manipulating it.
  * 
  * 
  * 2. Which of the two uses a closure? How can you tell?
  * 
- * counter1 uses closure because it is using another function inside to help store the data
+ * counter1 uses closure because it is using another function inside allowing it to count more than 1 score if need be
  * 
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
- * counter1 is better for knowing what each score was for example if it was a football game score you would know the value of each time the score went up and like if the score was 6 you would know whether they got 2 field goals or a touchdown and missed the PAT.
- * 
- * counter2 is better if the only information you need is the total like in a baseball game every run is 1 point so there is no confusion when looking at the score at the end of the game. if there are 4 points that means they crossed home plate 4 times.
+ * counter1 would be preferable if the program is needing more than 1 counter by giving it the ability to have multiple counters.
+ * counter2 would be better if the program only needed one counter because it would run faster without running another function.
  *
  * 
 */
