@@ -159,7 +159,9 @@ Final Score: awayTeam - homeTeam */
 
 //console.log(getInningScore(inning, 9));
 
-let getInningScore = '';
+function getInningScore(inning, awayTeam, homeTeam){
+  return `${inning} inning: Away Team ${awayTeam} - Home Team ${homeTeam}`;
+}
 
 function scoreboard(cb1, cb2, innings) {
 
@@ -167,12 +169,12 @@ function scoreboard(cb1, cb2, innings) {
   let homeTeam = 0
 
   for (let i = 0; i < innings; i++) {
-    cb1 = `${i + 1} inning: Away Team ${awayTeam} - Home Team ${homeTeam}`;
-    console.log(cb1)
     awayTeam = awayTeam + cb2();
     homeTeam = homeTeam + cb2();
+    console.log(cb1(i+1, awayTeam, homeTeam));
   }
+  return `\nFinal Score: Away Team ${awayTeam} - Home Team ${homeTeam}`;
 
 }
 
-scoreboard(getInningScore, inning, 9)
+console.log(scoreboard(getInningScore, inning, 9));
